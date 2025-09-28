@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+	<title>Galeria</title>
+	<link rel="stylesheet" href="egz_23_styl.css">
+</head>
+<body>
+<script>
+let numb=1;
+	function next()
+	{
+		if(numb < 5)
+		{
+			numb++;
+			document.getElementById('duze').src = numb + ".jpg";
+		}
+		else
+		{
+			document.getElementById('duze').src = "1.jpg";
+			numb = 1;
+		}
+		
+	}
+	
+	function prev()
+	{
+		if(numb > 1)
+		{
+			numb--;
+			document.getElementById('duze').src = numb + ".jpg";
+		}
+		else
+		{
+			document.getElementById('duze').src = "5.jpg";
+			numb = 5;
+		}
+		
+	}
+	
+	function zmien(num)
+	{
+		document.getElementById('duze').src = num + ".jpg";		
+	}
+	
+</script>
+<header>
+	<h1>Galeria obrazow</h1>
+</header>
+<nav>
+	<img src="zdjecie_new.jpg" alt="zdjecie dnia" id="foto">
+	<h3>Zdjecia opublikowali</h3>
+	<table>
+		<tr><td>Anna Porada</td> <td>10 zdjec</td></tr>
+		<tr><td>Krzysztof Wasiliewski</td> <td>12 zdjec</td></tr>
+		<tr><td>Monika Kowalska</td> <td>4 zdjecia</td></tr>
+	</table>
+	<p id="res">0</p>
+</nav>
+<main>
+	<button type="button" onclick="prev()">PREV</button>
+	<img src="1.jpg" alt="galeria" id="duze">
+	<button type="button" onclick="next()">Zmien</button>
+	<hr>
+	<img src="1.jpg" alt="miniatura" onclick="zmien(1)" class="miniatura">
+	<img src="2.jpg" alt="miniatura" onclick="zmien(2)" class="miniatura">
+	<img src="3.jpg" alt="miniatura" onclick="zmien(3)" class="miniatura">
+	<img src="4.jpg" alt="miniatura" onclick="zmien(4)" class="miniatura">
+	<img src="5.jpg" alt="miniatura" onclick="zmien(5)" class="miniatura">
+</main>
+<footer>
+	<a href="https://pixabay.com" target="_blank">
+	<p>Strone wykonal:Alex</p>
+</footer>
+
+
+</body>
+</html>
