@@ -1,0 +1,49 @@
+*{
+	font-family:Century, Serif;
+	text-align:center;
+}
+footer, header{
+	background-color:Indigo;
+	color:white;
+	font-style:italic;
+	padding:2px;
+}
+
+article{
+	width:50%;
+	height:470px;
+	float:left;
+}
+
+img{
+	padding:3px;
+	margin:10px;
+	border:2px dotted SlateBlue;
+}
+
+a{
+	color:white;
+}
+
+button{
+	background-color:SlateBlue;
+	color:white;
+	border:none;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:20px;
+	padding-right:20px;
+	margin-top:10px;
+}
+
+button:hover{
+	background-color:Indigo;
+}
+
+.rozmiar{
+	width:80%;
+}
+
+footer{
+	clear:both;
+}

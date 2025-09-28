@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+	<title>Efekty obrazu</title>
+	<link rel="stylesheet" href="filtry_styl.css">
+</head>
+<body>
+<script type="text/javascript">
+	function filtr()
+	{
+		if(document.getElementById('blur').checked)
+			document.getElementById('foto1').style.filter = "blur(6px)";
+		else
+			if(document.getElementById('sepia').checked)
+				document.getElementById('foto1').style.filter = "sepia(100%)";
+		else
+			document.getElementById('foto1').style.filter = "invert(100%)";
+	}
+	
+	function kolor(ind)
+	{
+		if(ind == 2)
+			document.getElementById('foto2').style.filter = "grayscale(100%)";
+		else
+			document.getElementById('foto2').style.filter = "grayscale(0%)";
+	}
+	
+	function filtr_suwak()
+	{
+		let ind = document.getElementById('suwak').value / 100;
+		document.getElementById('foto3').style.opacity = ind;
+	}
+	
+	function filtr_suwak1()
+	{
+		let ind = document.getElementById('suwak1').value / 250;
+		document.getElementById('foto4').style.brightness = ind;
+	}
+	
+</script>
+<header>
+	<h2>Efekty na obrazach</h2>
+</header>
+<main>
+	<article>
+		<img src="pszczola.jpg" alt="pszczoła na fioletowym kwiatku" id="foto1"><br>
+		<input type="radio" name="foto" id="blur">Blur<br>
+		<input type="radio" name="foto" id="sepia">Sepia<br>
+		<input type="radio" name="foto" id="negatyw">Negatyw<br>
+		<button type="button" onclick="filtr()">Zastosuj</button>
+	</article>
+	<article>
+		<img src="pomarancza.jpg" alt="drzewo pomarańczy" id="foto2"><br>
+		<button type="button" onclick="kolor(1)">Kolorowy</button>
+		<button type="button" onclick="kolor(2)">Czarno-bialy</button>
+	</article>
+	<article>
+		<img src="owoce.jpg" alt="Kosz pełen owoców" id="foto3"><br>
+		<input type="range" min="0" max="100" value="100" class="rozmiar" id="suwak"><br>
+		<button type="button" onclick="filtr_suwak">Zastosuj</button>
+	</article>
+	<article>
+		<img src="zolw.jpg" alt="Żółw w wodzie" id="foto4"><br>
+		<input type="range" min="0" max="250" value="100" class="rozmiar" id="suwak1"><br>
+		<button type="button" onclick="filtr_suwak1">Zastosuj</button>
+	</article>
+
+</main>
+<footer>
+	<p><a href="http://www.css.com/">Zobacz inne efekty obrazu</a></p>
+	<p>Strone wykonal:Aleksander</p>
+</footer>
+
+</body>
+</html>
